@@ -7,7 +7,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ViewPagerAdapter(): RecyclerView.Adapter<ViewPagerAdapter.BoardViewHolder>() {
+
+class ViewPagerAdapter(
+    private val boardList: List<Board>
+): RecyclerView.Adapter<ViewPagerAdapter.BoardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.board_item, parent, false)

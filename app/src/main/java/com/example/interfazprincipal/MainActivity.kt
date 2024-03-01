@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         boardList = listOf(
             Board(
-                fondo = R.color.black,
+                fondo = R.color.AZUL,
                 imagen = R.drawable.uno,
                 titulo = "lorem ipsummm",
                 descripcion = "holaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         )
         val adapter = ViewPagerAdapter(boardList)
+
         viewPager.adapter = adapter
     }
 }
