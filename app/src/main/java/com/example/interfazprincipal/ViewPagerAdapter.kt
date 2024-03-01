@@ -12,10 +12,19 @@ class ViewPagerAdapter(
     private val onItemSelected: OnItemSelected
 ) : RecyclerView.Adapter<ViewPagerAdapter.BoardViewHolder>() {
 
+    private val indicators = mutableListOf<View>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.board_item, parent, false)
-        return BoardViewHolder(view, onItemSelected)
+        val viewHolder = BoardViewHolder(view, onItemSelected)
+        val indicator1 = view.findViewById<View>(R.id.indicator1)
+        val indicator2 = view.findViewById<View>(R.id.indicator2)
+        val indicator3 = view.findViewById<View>(R.id.indicator3)
+        val indicator4 = view.findViewById<View>(R.id.indicator4)
+        indicators.addAll(listOf(indicator1, indicator2, indicator3, indicator4))
+        return viewHolder
     }
+
 
     override fun getItemCount(): Int {
         return boardList.size
@@ -23,6 +32,7 @@ class ViewPagerAdapter(
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
         holder.bind(boardList[position])
+        updateIndicators(position)
     }
 
     inner class BoardViewHolder(
@@ -54,5 +64,11 @@ class ViewPagerAdapter(
 
     interface OnItemSelected {
         fun onClickListener(position: Int)
+    }
+
+    fun updateIndicators(currentPosition: Int) {
+        indicators.forEachIndexed { index, view ->
+            view.background = ContextCompat.getDrawable(view.context, if (index == currentPosition) R.drawable.circle_active else R.drawable.circle_inactive)
+        }
     }
 }

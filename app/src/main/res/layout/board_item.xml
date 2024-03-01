@@ -57,6 +57,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5" />
 
+    <View
+        android:id="@+id/highlightLine"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/highlight_color"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <LinearLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/indicator1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/circle_inactive" />
+
+        <View
+            android:id="@+id/indicator2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/circle_inactive" />
+
+        <View
+            android:id="@+id/indicator3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/circle_inactive" />
+
+        <View
+            android:id="@+id/indicator4"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/circle_inactive" />
+
+    </LinearLayout>
+
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_siguiente"
         android:layout_width="wrap_content"
