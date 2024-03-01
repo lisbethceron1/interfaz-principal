@@ -4,6 +4,10 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros estilos de tu aplicación -->
+        <item name="android:statusBarColor">@color/AZUL</item>
+    </style>
 
     <style name="Theme.InterfazPrincipal" parent="Base.Theme.InterfazPrincipal" />
 </resources>
