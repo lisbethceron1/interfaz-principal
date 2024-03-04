@@ -2,10 +2,16 @@ package com.example.interfazprincipal
 
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 
 class MainActivity : AppCompatActivity(), ViewPagerAdapter.OnItemSelected {
@@ -31,9 +37,9 @@ class MainActivity : AppCompatActivity(), ViewPagerAdapter.OnItemSelected {
         boardList = listOf(
             Board(
                 fondo = R.color.AZUL,
-                imagen = R.drawable.uno,
-                titulo = "Sobre Nosotros",
-                descripcion = "Somos una plataforma de aprendizaje que ofrece clases personalizadas impartidas por instructores expertos. Nuestra misión es proporcionar una experiencia educativa adaptada a las necesidades individuales de cada estudiante."
+                imagen = R.drawable.logopngblanco__2_,
+                titulo = "",
+                descripcion = "Descubre una nueva forma de aprender con  clases personalizadas y flexibilidad total, te ofrecemos la oportunidad de crecer académicamente a tu ritmo y conveniencia. En Educatio, nos esforzamos por proporcionarte una experiencia educativa sin igual."
             ),
             Board(
                 fondo = R.color.AZUL,
@@ -64,6 +70,7 @@ class MainActivity : AppCompatActivity(), ViewPagerAdapter.OnItemSelected {
                 adapter.updateIndicators(position)
             }
         })
+
     }
 
     override fun onClickListener(position: Int) {

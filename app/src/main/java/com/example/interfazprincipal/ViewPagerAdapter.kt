@@ -21,7 +21,11 @@ class ViewPagerAdapter(
         val indicator2 = view.findViewById<View>(R.id.indicator2)
         val indicator3 = view.findViewById<View>(R.id.indicator3)
         val indicator4 = view.findViewById<View>(R.id.indicator4)
+
+        // Limpiar la lista de indicadores antes de agregar los nuevos
+        indicators.clear()
         indicators.addAll(listOf(indicator1, indicator2, indicator3, indicator4))
+
         return viewHolder
     }
 
@@ -32,8 +36,8 @@ class ViewPagerAdapter(
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
         holder.bind(boardList[position])
-        updateIndicators(position)
     }
+
 
     inner class BoardViewHolder(
         itemView: View,
@@ -67,8 +71,15 @@ class ViewPagerAdapter(
     }
 
     fun updateIndicators(currentPosition: Int) {
-        indicators.forEachIndexed { index, view ->
-            view.background = ContextCompat.getDrawable(view.context, if (index == currentPosition) R.drawable.circle_active else R.drawable.circle_inactive)
+        if (currentPosition in indicators.indices) {
+            for (i in indicators.indices) {
+                indicators[i].background = ContextCompat.getDrawable(
+                    indicators[i].context,
+                    if (i == currentPosition) R.drawable.circle_active else R.drawable.circle_inactive
+                )
+            }
         }
     }
+
+
 }

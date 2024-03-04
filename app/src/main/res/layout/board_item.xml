@@ -6,28 +6,28 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/white"
-    >
+    android:padding="20dp"
+    android:background="@color/white">
+    <View
+        android:id="@+id/highlightLine"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/highlight_color"
+        app:layout_constraintTop_toTopOf="parent" /> <!-- Cambiar Top_toTopOf -->
+    <!-- Cambiar Bottom_toBottomOf a Top_toTopOf -->
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="81dp"
-
-    android:src="@drawable/logopngblanco__2_"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    />
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:scaleType="fitXY"
+        android:layout_marginTop="40dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView_titulo"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/textView_titulo"
@@ -41,28 +41,26 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/textView_descripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView_titulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        android:layout_marginTop="8dp"
+    android:text="holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+        android:textStyle="bold"
+        android:typeface="sans"
+    android:textSize="23sp"
+    app:layout_constraintTop_toBottomOf="@+id/textView_titulo"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5" />
 
-    <View
-        android:id="@+id/highlightLine"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/highlight_color"
-        app:layout_constraintBottom_toBottomOf="parent" />
+
     <LinearLayout
         android:id="@+id/indicatorLayout"
         android:layout_width="wrap_content"
@@ -101,8 +99,6 @@
             android:background="@drawable/circle_inactive" />
 
     </LinearLayout>
-
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_siguiente"
